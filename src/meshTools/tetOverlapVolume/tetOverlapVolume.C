@@ -64,7 +64,7 @@ Foam::scalar Foam::tetOverlapVolume::tetTetOverlapVol
     tetPointRef::sumVolOp volInside;
     tetPointRef::dummyOp outside;
 
-    if ((tetA.tet().mag() < SMALL*SMALL) || (tetB.tet().mag() < SMALL*SMALL))
+    if ((tetA.tet().quality() < SMALL) || (tetB.tet().quality() < SMALL))
     {
         return 0.0;
     }
